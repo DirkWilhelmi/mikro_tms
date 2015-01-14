@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShowPlaylist xmlns="http://xmlns.sony.net/d-cinema/spl/2006">
+	<Id>urn:uuid:0000000-0000-0000-0000-000000000000</Id>
+	<Offset>00:00:00.000</Offset>
+	<Duration>00:00:00.000</Duration>
+	<DurationWithIntermission>00:00:00.000</DurationWithIntermission>
+	<Metadata>
+		<Type></Type>
+		<Title></Title>
+		<Annotation></Annotation>
+		<RevisionDate></RevisionDate>
+		<Version></Version>
+		<Language>
+		<Audio></Audio>
+		<Subtitle></Subtitle>
+		</Language>
+		<Country></Country>
+		<RatingList />
+		<AspectRatio>-1 -1</AspectRatio>
+		<ImageFormat>XYZ</ImageFormat>
+		<AudioFormat></AudioFormat>
+		<HasIntermission>false</HasIntermission>
+		<IsPrefetched>false</IsPrefetched>
+	</Metadata>
+	<Content>
+	</Content>
+</ShowPlaylist>

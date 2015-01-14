@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+	    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    </head>
+<body>
+    <div data-role="page" id="home">
+
+      <div data-role="header">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext"></a><h1>R515 Controller</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <div data-role="controlgroup" data-type="horizontal">        
+            <button class="ui-btn">Pause</button>
+            <button class="ui-btn">Resume</button>
+            <button class="ui-btn">Stop</button>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal">        
+            <button class="ui-btn">Klappe Zu</button>
+            <button class="ui-btn">Klappe Auf</button>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal">        
+            <button class="ui-btn">DCI Flat</button>
+            <button class="ui-btn">DCI CS</button>
+            <button class="ui-btn">HDMI Flat</button>
+            <button class="ui-btn">HDMI CS</button>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal">        
+            <button class="ui-btn">Projektor An</button>
+            <button class="ui-btn">Projektor Standby</button>
+        </div>
+        
+        <a href="#about" class="ui-btn">About</a>
+      </div>
+
+    </div>
+
+    <div data-role="page"  data-dialog="true" id="about">
+          <div data-role="main" class="ui-content">
+            <p>(C) 2014 DW @ SFK Darmstadt</p>        
+            <a href="#home">Home</a>
+          </div>
+    </div>
+</body>
+</html>
