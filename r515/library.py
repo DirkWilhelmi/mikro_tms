@@ -51,4 +51,3 @@ class Library(object):
         for spl in body.iter('SPLMetadata'):
             spl_list.append({'uuid': spl.find('UUID').text, 'title': spl.find('Title').text})
         return spl_list
-        
