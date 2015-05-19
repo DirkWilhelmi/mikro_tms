@@ -108,6 +108,9 @@ class BasicSettings(object):
         #TODO
         pass
 
+    def set_lamp_power(self, value):
+        self._prj.send("command/projector/lamp/power/set?lampId=FF&luminanceShutter=03&value="+str(value))
+
     def get_projector_settings(self):
         """Get some settings"""
         xml = self._prj.send("config/projector/install/settings")
