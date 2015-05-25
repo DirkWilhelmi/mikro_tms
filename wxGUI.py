@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import wx
+from r515.projector import *
+import ConfigParser
 
 
 class MainWindow(wx.Frame):
@@ -10,8 +12,12 @@ class MainWindow(wx.Frame):
 
         self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
 
+        self.timer = wx.Timer(self, wx.ID_ANY)
+        self.timer.Start(1000)
+        self.Bind(wx.EVT_TIMER, self.update_time, self.timer)
+
         # Setting up the menu.
-        mainMenu= wx.Menu()
+        mainMenu = wx.Menu()
 
         # wx.ID_ABOUT and wx.ID_EXIT are standard ids provided by wxWidgets.
         menuAbout = mainMenu.Append(wx.ID_ABOUT, "&About"," Information about this program")
@@ -124,6 +130,20 @@ class MainWindow(wx.Frame):
 
     def __del__(self):
         pass
+
+    def update_time(self, event):
+        pass
+
+
+
+#Load settings:   IP Adresse    Benutzer  Passwort
+config = ConfigParser.ConfigParser()
+config.read(['r515.cfg'])
+
+conn = Connection(config.get('Connection', 'IP'), config.get('Connection', 'USR'), config.get('Connection', 'PWD'))
+prj = BasicFunctions(conn)
+settings = BasicSettings(conn)
+library = Library(conn)
 
 app = wx.App(False)
 frame = MainWindow(None)
