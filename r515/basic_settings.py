@@ -122,7 +122,8 @@ class BasicSettings(object):
         h_shift = settings.find('MasterHShift').text
         lamp_power = settings.find('LampPower').text
         picture_mode = settings.find('PicutureMode').text
-        return {'v_shift': v_shift, 'h_shift': h_shift, 'lamp_power': lamp_power, 'picture_mode': picture_mode}
+        media_block = settings.find('PrjMediaBlock').text
+        return {'v_shift': v_shift, 'h_shift': h_shift, 'lamp_power': lamp_power, 'picture_mode': picture_mode, 'media_block': media_block}
 
 class RemoteIndexError(Exception):
     """Raised if Index is out of bounds"""

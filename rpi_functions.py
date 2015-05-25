@@ -41,19 +41,19 @@ def play():
 
 
 def dci_flat():
-    settings.load_format(0)
-
-
-def dci_cs():
     settings.load_format(1)
 
 
-def hdmi_flat():
+def dci_cs():
     settings.load_format(2)
 
 
-def hdmi_cs():
+def hdmi_flat():
     settings.load_format(3)
+
+
+def hdmi_cs():
+    settings.load_format(4)
 
 
 def dowser_close():
@@ -97,4 +97,4 @@ def stop_focus_down():
 
 
 def is_hdmi():
-    return int(settings.get_projector_settings()['picture_mode']) > 2
+    return settings.get_projector_settings()['media_block'] == 'UNKNOWN'
