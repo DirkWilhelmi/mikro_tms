@@ -283,15 +283,16 @@ class Library_Window(Frame):
             self.table.insert(END, cpl['title'])
         
     def play(self, event, typ):
-        prj.close_douser()
-        prj.stop()
-        status = prj.get_show_info()["status"]
-        while not (status == "STOPPED" or status == "NONE" or status == "COMPLETED"):
-            status = prj.get_show_info()["status"]
-        time.sleep(0.5)
-        prj.play(self._list[int(self.table.curselection()[0])]["uuid"], typ, 0)
-        prj.open_douser()
-        self.after(800, app.sync_status(False))
+        #prj.close_douser()
+        #prj.stop()
+        #status = prj.get_show_info()["status"]
+        #while not (status == "STOPPED" or status == "NONE" or status == "COMPLETED"):
+        #    status = prj.get_show_info()["status"]
+        #time.sleep(0.5)
+        #prj.play(self._list[int(self.table.curselection()[0])]["uuid"], typ, 0)
+        print self._list[int(self.table.curselection()[0])]["uuid"]
+        #prj.open_douser()
+        #self.after(800, app.sync_status(False))
         
     def createWidgets(self):
         self.pane = PanedWindow(self)
