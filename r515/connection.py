@@ -5,6 +5,7 @@ from urllib2 import urlopen, Request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 import re
+import ssl
 
 class Connection(object):
     """Eine Verbindungsklasse zum Projektor R515. Besteht aus der Verbindungsinitialisierung, einer send-Funktion sowie einem Destruktor (Logout)"""
@@ -14,7 +15,8 @@ class Connection(object):
         self._debug = True
         self._ip = ip
         #get Cookie
-        response = urlopen("https://"+ip+"/config/role/list")
+        context = ssl._create_unverified_context()
+        response = urlopen("https://"+ip+"/config/role/list", context=context)
         self._cookie = response.info()['Set-Cookie']
         #Login
         self.send("login", "<SMSMessage><MessageHeader><Id>-1</Id><Type>SMSUserSession</Type><Timestamp>0</Timestamp><Source>Theater-0</Source></MessageHeader><MessageBody><SMSUserSession><User>"+user+"</User><Password>"+pwd+"</Password></SMSUserSession></MessageBody></SMSMessage>")
